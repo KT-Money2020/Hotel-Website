@@ -1,0 +1,300 @@
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    /* Light Grey */
+    background-color: #f4f4f4;
+    
+}
+
+/****************************GLOBAL*************************/
+.container {
+    /*Total width of its invisible box is 80% */
+    width: 80%;
+    /* Centers the content*/
+    margin: auto;
+    /* If any content goes out of the div then there won't be 
+    a scroll bar */
+    overflow: hidden;
+}
+
+ul{
+    /* By default unordered list have padding set*/
+    /* I guess by setting both of these to 0 it will also get rid of the bulleted points */
+    margin: 0;
+    padding: 0;
+}
+
+.button_1{
+    height: 38px;
+    background: #e8491d;
+    /* By default the button have set borders so you should set it to 0 */
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    
+}
+
+.dark{
+    padding: 15px;
+    background: #35424a;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+/****************************Header*************************/
+
+header{
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    /* This makes sure that the height stays the same for all different screens, the height will adjust */
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+
+
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+
+header li{
+    /* Float the li items to the left so that it does not stack and start to look like a real navigation bar */
+    float: left;
+    /* Makes the items inline rather than block */
+    /* Whats also wird is that it also removes the dotted item */
+    display: inline;
+    /* Adds some space to right and left navigation item */
+    padding: 0 20px 0 20px;
+}
+
+
+header #branding {
+    /* float the entire block of h1 to the left */
+    float: left;
+}
+
+header #branding h1{
+    /* resets the h1 margin */
+    margin: 0;
+}
+
+header nav {
+    /* float the navigation item to the right and float it down a little to 10px; */
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight, 
+header .current a{
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+/****************************Showcase*************************/
+
+
+#showcase{
+    min-height: 400px;
+    /* the zero is the x-axis so basically x=0 and y=-400 */
+    background: url('../img/showcase.jpg') no-repeat 0 -400px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#showcase h1{
+    /* Brings down the h1 100px and make font size bigger */
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+#showcase p{
+    /* Adjust the font-size of the paragraph */
+    font-size: 20px;
+}
+/****************************newsletter*************************/
+
+#newsletter{
+    /* adds overall padding to the #newletter box */
+    padding: 15px;
+    color: #ffffff;
+    background: #35424a;
+}
+
+#newsletter h1{
+    /* Pushes the 'Subscribe To Out Newsleter' font to the left*/
+    float: left;
+}
+
+#newsletter form {
+    float: right; 
+    margin-top: 15px;
+}
+
+#newsletter input[type="email"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+
+
+/****************************Boxes*************************/
+
+#boxes{
+    margin-top: 20px;
+}
+
+#boxes .box{
+    float: left;
+    /* Note: its important that if you want to float three boxes like this so that it would stck vertically it is important that you set a width, kind of like a border, to something like 30% so that it would stack */
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+}
+
+#boxes .box img{
+    /* I guess setting the images width would resize the image */
+    width: 90px;
+}
+
+/****************************SideBar*************************/
+
+/* One of the weirdest css syntax ever*/
+/* You need have the aside bar right next to the #sidebar id in order for it respond and wrok */
+/* This is what makes the 'What We Do' sidebar float to the right of the screen */
+aside#sidebar{
+    float: right;
+    /* this tells it how much width the box containing the text should be as it starts to floar right */ 
+    width: 30%;
+    margin-top: 10px;
+}
+
+aside#sidebar .quote input, 
+aside#sidebar .quote textarea{
+    /*The width is what decides how long the text input box should be */
+    width: 90%;
+    /*The padding will resize how large the white box input should also be */
+    padding: 5px; 
+}
+
+/****************************Main-Column*************************/
+
+/*This is the 'About Us' Section/Block and you are basically floating it to the left of the screen while the sidebar is already floated right */
+/*And again it is important that you set the width so that both the side bar and the main column will fit all in once line */
+/*Update: The reason why there is no space between article and #main-col is because the id main-col is within the article tag so therefore it would makes sense that there is no space in between */
+article#main-col{
+    float: left;
+    width: 65%;
+}
+
+/****************************Services*************************/
+ul#services li{
+    /* This is what truly removes the bulleted points from the listed items, which is the 'list-styles: none' */
+    list-style: none;
+    padding: 20px;
+    border: #cccccc solid 1px;
+    margin-bottom: 5px;
+    background: #e6e6e6;
+   
+}
+
+/****************************Footer*************************/
+
+
+footer{
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #e8491d;
+    text-align: center;
+}
+/***************************Media Queries*************************/
+/* This is usually around the size of tablet screens */
+@media(max-width: 768px){
+    header #branding,
+    header nav,
+    header nav li,
+    #newsletter h1,
+    #newsletter form,
+    #boxes .box,
+    /*This section will now 
+    be the about page*/
+    article#main-col,
+    aside#sidebar{
+        /*No more floating means more stacking */
+        float: none; 
+        /* Makes sure that everything is aligned to the center */
+        text-align: center;
+        /* Maximizes the width of the box so that it could reach across that screen, but not so far that it breaks the container class */
+        width: 100%; 
+       
+    }
+    header{
+        padding-bottom: 20px;
+    }
+    #showcase h1{
+        /* Adds removes some of the space from the 'Affordable Professiona; Web Design' header */
+        margin-top: 40px;
+    }
+    #newsletter button,
+    /* We also setting 
+    button from the service
+    page to a block 
+    and setting it to 
+    100% as well */
+    .quote button{
+        /* 'Display: block' probably because you dont want it be inline with anything else and that you would just want it to have its own seperate space */
+        display: block;
+        /* Maximizes the width of the box so that it could reach across that screen, but not so far that it breaks the container class */            
+        width: 100%;
+    }
+    
+    #newsletter form input[type="email"],
+    /*This one is from the service page*/
+    .quote input,
+    .quote textarea{
+        width: 100%;
+        /* Gives some space between the email input box and the subscribe box */ 
+        margin-bottom: 5px;
+    }
+  
+}
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
